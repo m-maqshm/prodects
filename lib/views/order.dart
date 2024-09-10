@@ -38,7 +38,7 @@ class _OrderPageState extends State<OrderPage> {
                     ? null
                     : "this field is required",
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.password_rounded),
+                    prefixIcon: Icon(Icons.person),
                     label: Text("اسم المستلم"),
                     hintText: "مثال: محمد صالح مقشم",
                     border: OutlineInputBorder(
@@ -50,12 +50,12 @@ class _OrderPageState extends State<OrderPage> {
               child: TextFormField(
                 keyboardType:TextInputType.phone ,
                 controller: phonController,
-                validator: (x) => x != null && x.isNotEmpty&&x.length>=9&&(x.startsWith('77')||x.startsWith('78')||x.startsWith('73')||x.startsWith('71'))
+                validator: (x) => x != null && x.isNotEmpty&&x.length>=9&&(x.startsWith('77')||x.startsWith('78')||x.startsWith('73')||x.startsWith('71')||x.startsWith('70'))
                     ? null
                     : "this field is required",
                 decoration: InputDecoration(
 
-                    prefixIcon: Icon(Icons.password_rounded),
+                    prefixIcon: Icon(Icons.phone),
                     label: Text("رقم الجوال"),
                     hintText: "مثال: 772725459",
                     border: OutlineInputBorder(
@@ -74,6 +74,7 @@ class _OrderPageState extends State<OrderPage> {
 
               });
             },),),
+          SizedBox(height: 30,),
           Text('طريقة الدفع'),
                 Row(
                   children: [
@@ -121,7 +122,7 @@ class _OrderPageState extends State<OrderPage> {
             ),
           ), ElevatedButton(onPressed: () {
     if(frmKeyee.currentState!.validate()){
-
+Navigator.pushNamed(context, '/finshorder');
       }
           }, child: Text("طلب"))
 

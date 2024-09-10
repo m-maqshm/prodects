@@ -9,6 +9,7 @@ import 'package:untitled1/views/order.dart';
 import 'package:untitled1/views/splash_screen.dart';
 
 import '../views/demoSreane.dart';
+import '../views/fishedOrder.dart';
 import '../views/sinupScreane.dart';
 
 class AppRoutes{
@@ -27,6 +28,7 @@ class AppRoutes{
       case '/demo': return MaterialPageRoute(builder: (ctx)=>DemoStalFullScrean());
       case '/sinup': return MaterialPageRoute(builder: (ctx)=>SinupScreane());
       case '/order': return MaterialPageRoute(builder: (ctx)=>OrderPage());
+      case '/finshorder': return MaterialPageRoute(builder: (ctx)=>FinshedOrder());
       default:return MaterialPageRoute(builder: (ctx)=>NotFoundScreen());
     }
 
