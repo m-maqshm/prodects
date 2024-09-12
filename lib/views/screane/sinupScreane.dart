@@ -1,4 +1,10 @@
+
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:untitled1/views/widget/app_button.dart';
+import 'package:untitled1/views/widget/textform.dart';
 
 class SinupScreane extends StatefulWidget {
   const SinupScreane({super.key});
@@ -16,6 +22,7 @@ class _SinupScreaneState extends State<SinupScreane> {
   String? gender = 'female';
   bool? ispAcseptdCondeshin = false;
   bool? isPoslispAcseptdCondeshin = false;
+  String? pathimge;
 
   @override
   Widget build(BuildContext context) {
@@ -32,19 +39,36 @@ class _SinupScreaneState extends State<SinupScreane> {
                     SizedBox(
                       height: 30,
                     ),
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/accoune.png')),
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50),
-                          border: Border.all(
-                              color: Colors
-                                  .green)) /*,child: Icon(Icons.account_box,size:120,)*/
-                      ,
+                    InkWell(
+                      onTap: () async {
+
+                        pathimge = await pickerImage(ImageSource.camera);
+setState(() {});},
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        decoration:pathimge==null? BoxDecoration(
+                            image: DecorationImage(
+                                image:AssetImage("assets/images/accoune.png")),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50),
+                            border: Border.all(
+                                color: Colors
+                                    .green)) :BoxDecoration(
+                            image: DecorationImage(
+                                image:FileImage(File(pathimge!))),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50),
+                            border: Border.all(
+                                color: Colors
+                                    .green))/*,child: Icon(Icons.account_box,size:120,)*/
+                        ,
+                      ),
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
+
                     SizedBox(
                       height: 30,
                     ),
@@ -160,6 +184,15 @@ class _SinupScreaneState extends State<SinupScreane> {
       },child: Icon(Icons.save),)
       ),
     );
+
+  }
+  Future<String?> pickerImage (ImageSource? type) async{
+    ImagePicker _picker = ImagePicker();
+    XFile? im = await _picker.pickImage(source: type!);
+    return im?.path;
+  }
+  ee(int d, int x){
+    // if
   }
 
 }

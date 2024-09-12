@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/models/product.dart';
-import 'package:untitled1/views/cart_screen.dart';
-import 'package:untitled1/views/details_screen.dart';
-import 'package:untitled1/views/home_screen.dart';
-import 'package:untitled1/views/login_screen.dart';
-import 'package:untitled1/views/not_found.dart';
-import 'package:untitled1/views/order.dart';
-import 'package:untitled1/views/splash_screen.dart';
-
-import '../views/demoSreane.dart';
-import '../views/fishedOrder.dart';
-import '../views/sinupScreane.dart';
+import 'package:untitled1/views/screane/cart_screen.dart';
+import '../views/screane/demoSreane.dart';
+import '../views/screane/details_screen.dart';
+import '../views/screane/fishedOrder.dart';
+import '../views/screane/home_screen.dart';
+import '../views/screane/login_screen.dart';
+import '../views/screane/not_found.dart';
+import '../views/screane/order.dart';
+import '../views/screane/sinupScreane.dart';
+import '../views/screane/splash_screen.dart';
 
 class AppRoutes{
   static Route<dynamic>? routeManager(RouteSettings settings ){

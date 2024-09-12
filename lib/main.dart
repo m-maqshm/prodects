@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/utils/app_routes.dart';
-import 'package:untitled1/views/cart_screen.dart';
-import 'package:untitled1/views/details_screen.dart';
-import 'package:untitled1/views/home_screen.dart';
-import 'package:untitled1/views/login_screen.dart';
-import 'package:untitled1/views/splash_screen.dart';
+import 'package:untitled1/views/screane/cart_screen.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -19,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: false),
       //home: HomeScreen(),
-      initialRoute: "/splash",
+      initialRoute: "/sinup",
       onGenerateRoute: AppRoutes.routeManager,
       // routes: {
       //   "/home":(ctx)=>HomeScreen(),
